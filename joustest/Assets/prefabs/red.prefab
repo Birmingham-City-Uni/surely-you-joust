@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5341297968707542948
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: bff7bde8cd6311e4d8cef365845004e6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 196.8781
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bff7bde8cd6311e4d8cef365845004e6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 196.8781
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bff7bde8cd6311e4d8cef365845004e6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 196.8781
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bff7bde8cd6311e4d8cef365845004e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.9
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bff7bde8cd6311e4d8cef365845004e6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 19.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bff7bde8cd6311e4d8cef365845004e6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 190.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bff7bde8cd6311e4d8cef365845004e6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.15466228
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bff7bde8cd6311e4d8cef365845004e6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bff7bde8cd6311e4d8cef365845004e6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.98796743
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bff7bde8cd6311e4d8cef365845004e6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bff7bde8cd6311e4d8cef365845004e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bff7bde8cd6311e4d8cef365845004e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 162.206
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bff7bde8cd6311e4d8cef365845004e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: bff7bde8cd6311e4d8cef365845004e6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c82fef3c543329a4eb3d37dbe37fdf16, type: 2}
+    - target: {fileID: 919132149155446097, guid: bff7bde8cd6311e4d8cef365845004e6, type: 3}
+      propertyPath: m_Name
+      value: tentBase_furntiure_area (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bff7bde8cd6311e4d8cef365845004e6, type: 3}
