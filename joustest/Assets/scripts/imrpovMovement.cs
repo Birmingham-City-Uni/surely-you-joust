@@ -14,6 +14,9 @@ public class imrpovMovement : MonoBehaviour
     public LayerMask whatisground;
     bool grounded;
 
+    public float groundistance;
+
+
     void Start()
     {
        rb = GetComponent<Rigidbody>();
@@ -28,11 +31,25 @@ public class imrpovMovement : MonoBehaviour
             rb.linearDamping = grounddrag;
         else
             rb.linearDamping = 0;
+        RaycastHit hit;
+        Vector3 castposition = transform.position;
+        castposition.y = 0;
+        if (Physics.Raycast(castposition, -transform.up, out hit, Mathf.Infinity, whatisground))
+        {
+            if (hit.collider != null)
+            {
+                Vector3 moveposition = transform.position;
+                moveposition.y = hit.point.y + groundistance;
+                transform.position = moveposition;
+            }
+        }
+    
                 }
     private void FixedUpdate()
     {
         moveplayer();
     }
+   
     private void myinput()
     {
         horizontalInupt = Input.GetAxisRaw("Horizontal");

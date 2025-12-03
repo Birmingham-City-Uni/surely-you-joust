@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public class camera : MonoBehaviour
+public class scene_manager : MonoBehaviour
 {
-    public GameObject pCyclinder19;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,6 +11,6 @@ public class camera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       transform.position= pCyclinder19.transform.position + new Vector3 (20, 6,0); 
+        
     }
 }
