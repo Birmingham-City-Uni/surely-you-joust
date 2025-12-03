@@ -4,7 +4,8 @@ public class movement : MonoBehaviour
 {
     public float horizontalInput;
     public float verticalInput;
-    public float turnspeed;
+    public float turnspeed=10;
+    public float movemnentspeed = 10;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,8 +18,8 @@ public class movement : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
-        transform.Translate(Vector3.forward * Time.deltaTime * verticalInput);
-        transform.Translate(-Vector3.right * Time.deltaTime * horizontalInput);
+        transform.Translate(Vector3.forward * Time.deltaTime * horizontalInput* movemnentspeed);
+        transform.Translate(-Vector3.right * Time.deltaTime * verticalInput* movemnentspeed);
         transform.Rotate(Vector3.up * horizontalInput * turnspeed * Time.deltaTime);
     }
 }
