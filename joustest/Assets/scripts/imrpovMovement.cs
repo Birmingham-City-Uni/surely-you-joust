@@ -1,0 +1,58 @@
+using UnityEngine;
+
+public class imrpovMovement : MonoBehaviour
+{
+    public float moveSpeed;
+    public Transform orientation;
+    float horizontalInupt;
+    float verticalInupt;
+    Vector3 movedirection;
+    Rigidbody rb;
+
+    public float grounddrag;
+    public float playerheight;
+    public LayerMask whatisground;
+    bool grounded;
+
+    void Start()
+    {
+       rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true;
+    }
+    private void Update()
+    {
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerheight * 0.5f + 0.2f, whatisground);
+        myinput();
+        speedcontrol();
+        if (grounded)
+            rb.linearDamping = grounddrag;
+        else
+            rb.linearDamping = 0;
+                }
+    private void FixedUpdate()
+    {
+        moveplayer();
+    }
+    private void myinput()
+    {
+        horizontalInupt = Input.GetAxisRaw("Horizontal");
+        verticalInupt = Input.GetAxisRaw("Vertical");
+
+    }
+    private void moveplayer()
+    {
+        movedirection = orientation.forward * verticalInupt+ orientation.right * horizontalInupt;
+        rb.AddForce(movedirection.normalized* moveSpeed* 10f, ForceMode.Force);
+    }
+    private void speedcontrol()
+    {
+        Vector3 flatvel = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
+        if(flatvel.magnitude > moveSpeed)
+        {
+            Vector3 limitedVel = flatvel.normalized * moveSpeed;
+            rb.linearVelocity = new Vector3(limitedVel.x, rb.linearVelocity.y, limitedVel.z);
+        }
+    }
+
+
+}
