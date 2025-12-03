@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - terrain
+  - battlemenu
   layers:
   - Default
   - TransparentFX

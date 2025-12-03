@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/ingame menu.unity
+    guid: ddde6956158c8e7479af53507215b03c
+  - enabled: 1
+    path: Assets/Scenes/combat.unity
+    guid: eee80f3d316a1364984fdee1c9c77aa6
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
