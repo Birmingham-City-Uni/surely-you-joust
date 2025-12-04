@@ -16,11 +16,13 @@ public class imrpovMovement : MonoBehaviour
 
     public float groundistance;
 
+    Vector3 forwardfacing;
+
 
     void Start()
     {
        rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true;
+       rb.freezeRotation = true;
     }
     private void Update()
     {
@@ -41,6 +43,10 @@ public class imrpovMovement : MonoBehaviour
                 Vector3 moveposition = transform.position;
                 moveposition.y = hit.point.y + groundistance;
                 transform.position = moveposition;
+            }
+            if (movedirection != Vector3.zero)
+            {
+                transform.forward = movedirection;
             }
         }
     
@@ -69,6 +75,10 @@ public class imrpovMovement : MonoBehaviour
             Vector3 limitedVel = flatvel.normalized * moveSpeed;
             rb.linearVelocity = new Vector3(limitedVel.x, rb.linearVelocity.y, limitedVel.z);
         }
+    }
+    private void wheretoface()
+    {
+      
     }
 
 
