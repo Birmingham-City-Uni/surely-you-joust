@@ -9,6 +9,7 @@ using System;
 public class countdown : MonoBehaviour
 {
     bool timer_is_running = true;
+    [SerializeField]
     float currentTime;
     public TMPro.TextMeshProUGUI currenttimetext;
     public int starttime;
@@ -33,9 +34,9 @@ public class countdown : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {    elapsedtime= starttime; 
-        increasered = elapsedtime + red.value ;
-        increaseblue = elapsedtime + blue.value;
+    {    elapsedtime += Time.deltaTime; 
+        increasered = elapsedtime ;
+        increaseblue = elapsedtime;
         if (timer_is_running == true)
         {
             currentTime = currentTime - Time.deltaTime;

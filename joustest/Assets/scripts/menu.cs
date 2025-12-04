@@ -17,6 +17,11 @@ public class menu : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("collided");
+        canvas.enabled = true;
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        
+        canvas.enabled = false;
     }
 }

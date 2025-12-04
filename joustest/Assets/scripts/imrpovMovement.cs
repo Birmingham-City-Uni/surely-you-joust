@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class imrpovMovement : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class imrpovMovement : MonoBehaviour
     float verticalInupt;
     Vector3 movedirection;
     Rigidbody rb;
+
+    Animator animator;
 
     public float grounddrag;
     public float playerheight;
@@ -22,6 +25,7 @@ public class imrpovMovement : MonoBehaviour
     void Start()
     {
        rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
        rb.freezeRotation = true;
     }
     private void Update()
@@ -59,6 +63,7 @@ public class imrpovMovement : MonoBehaviour
     private void myinput()
     {
         horizontalInupt = Input.GetAxisRaw("Horizontal");
+        animator.SetFloat("Move", horizontalInupt);
         verticalInupt = Input.GetAxisRaw("Vertical");
 
     }
