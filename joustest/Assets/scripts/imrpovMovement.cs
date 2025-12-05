@@ -63,7 +63,11 @@ public class imrpovMovement : MonoBehaviour
     private void myinput()
     {
         horizontalInupt = Input.GetAxisRaw("Horizontal");
-        animator.SetFloat("Move", horizontalInupt);
+        animator.SetFloat("Move", verticalInupt);
+        animator.SetFloat("left", verticalInupt);
+        animator.SetFloat("forward", horizontalInupt);
+        animator.SetFloat("backward", horizontalInupt);
+    
         verticalInupt = Input.GetAxisRaw("Vertical");
 
     }
@@ -81,10 +85,7 @@ public class imrpovMovement : MonoBehaviour
             rb.linearVelocity = new Vector3(limitedVel.x, rb.linearVelocity.y, limitedVel.z);
         }
     }
-    private void wheretoface()
-    {
-      
-    }
+
 
 
 }
