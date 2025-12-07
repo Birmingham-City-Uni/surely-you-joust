@@ -10,7 +10,7 @@ public class countdown : MonoBehaviour
 {
     bool timer_is_running = true;
     [SerializeField]
-    float currentTime;
+    public float currentTime;
     public TMPro.TextMeshProUGUI currenttimetext;
     public int starttime;
     public float elapsedtime;
