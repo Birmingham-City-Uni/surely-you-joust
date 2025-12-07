@@ -5,6 +5,7 @@ public class jousters : MonoBehaviour
 {
     public float moveduration = 5;
     public Vector3 target = new Vector3(178, 211, -37);
+    private countdown time;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,6 +23,10 @@ public class jousters : MonoBehaviour
             yield return null;
         }
         transform.position = targetposition;
+        if (time.currentTime == 0)
+        {
+            transform.position = startpostion;
+        }
     }
 }
 
