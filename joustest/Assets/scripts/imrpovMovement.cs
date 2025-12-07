@@ -20,6 +20,10 @@ public class imrpovMovement : MonoBehaviour
     public float groundistance;
 
     Vector3 forwardfacing;
+    int left= 0;
+    int right= 0;
+    int forward = 0;
+    int backward = 0;
 
 
     void Start()
@@ -52,8 +56,36 @@ public class imrpovMovement : MonoBehaviour
             {
                 transform.forward = movedirection;
             }
+            
         }
-    
+       if ( Input.GetKeyDown(KeyCode.A))
+        {
+            left = 1;
+            backward = 0;
+            forward = 0;
+            right = 0;
+        }
+       if (Input.GetKeyDown(KeyCode.S))
+            {
+            backward = 1;
+            forward = 0;
+            right= 0;
+            left = 0;
+        }
+       if (Input.GetKeyDown(KeyCode.D))
+        {
+            right = 1;
+            forward = 0;
+            backward= 0;
+            left= 0;
+        }
+       if (Input.GetKeyDown (KeyCode.W))
+        {
+            forward = 1;
+            backward = 0;
+            left= 0;
+            right = 0;
+        }
                 }
     private void FixedUpdate()
     {
@@ -63,11 +95,10 @@ public class imrpovMovement : MonoBehaviour
     private void myinput()
     {
         horizontalInupt = Input.GetAxisRaw("Horizontal");
-        animator.SetFloat("Move", verticalInupt);
-        animator.SetFloat("left", verticalInupt);
-        animator.SetFloat("forward", horizontalInupt);
-        animator.SetFloat("backward", horizontalInupt);
-    
+        animator.SetInteger("right", right);
+        animator.SetInteger("left", left);
+        animator.SetInteger("backwards", backward);
+        animator.SetInteger("forward", forward);
         verticalInupt = Input.GetAxisRaw("Vertical");
 
     }
