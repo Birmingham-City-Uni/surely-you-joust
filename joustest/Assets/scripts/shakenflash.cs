@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class shakenflash : MonoBehaviour
 {
@@ -7,11 +8,14 @@ public class shakenflash : MonoBehaviour
     public AnimationCurve curve;
     public float duration;
     private countdown time;
-    public bool hasshaken = false;  
+    public bool hasshaken = false;
+    private flashs flash;
+    [SerializeField] flashs flashs= null;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         time = GetComponent<countdown>();
+     
     }
 
     // Update is called once per frame
@@ -22,6 +26,7 @@ public class shakenflash : MonoBehaviour
             
                 start = false;
             StartCoroutine(shaking());
+          flashs.strtflsh(1,0.8f, Color.white);
             hasshaken=true;
              
             
