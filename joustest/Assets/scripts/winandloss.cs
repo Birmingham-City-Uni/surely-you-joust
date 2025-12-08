@@ -1,5 +1,5 @@
 using JetBrains.Annotations;
-using UnityEditor.Experimental.GraphView;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,6 +29,7 @@ public class winandloss : MonoBehaviour
     public void Start ()
     {
         score = gameObject.GetComponent<button_script>();
+        time= gameObject.GetComponent<countdown>();
     }
     public void Update()
     {
@@ -36,6 +37,7 @@ public class winandloss : MonoBehaviour
     }
     public void win1()
     {
+        
         if (time.currentTime <= 0)
         {
 
@@ -65,22 +67,22 @@ public class winandloss : MonoBehaviour
                     roundended1 = true;
               
                 }
-                else
-                {
-                    loss1();
-                }
+               
                 if (roundended1 == true)
                 {
                     roundended1 = false;
                     haslifebeentaken = false;
                     time.r2();
-
+                    Debug.Log("win");
 
                 }
 
 
             }
-
+            else
+            {
+                loss1();
+            }
         }
        
     }
@@ -116,7 +118,7 @@ public class winandloss : MonoBehaviour
                     roundended2 = true;
                     haslifebeentaken = false;
                     time.r3();
-
+                   
                 }
 
 
@@ -280,6 +282,7 @@ public class winandloss : MonoBehaviour
             enemyscore = enemyscore -5000;
             haslifebeentaken=true;
             roundended1 = true;
+            Debug.Log("calcapplied");
         }
         else if (playerlifes == 2)
         {
@@ -294,6 +297,7 @@ public class winandloss : MonoBehaviour
             roundended1 = false;
             haslifebeentaken = false;
             time.r2();
+            Debug.Log("lose");
 
         }
     }

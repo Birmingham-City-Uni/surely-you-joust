@@ -19,7 +19,7 @@ public class menu : MonoBehaviour
     {
         canvas.enabled = true;
     }
-    private void OnTriggerExit(Collider other)
+     void OnTriggerExit(Collider other)
     {
         
         canvas.enabled = false;

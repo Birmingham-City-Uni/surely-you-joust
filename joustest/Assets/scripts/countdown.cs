@@ -29,6 +29,7 @@ public class countdown : MonoBehaviour
     public Image round5;
     public Image round6;
    private winandloss winandloss;
+    private button_script velocityaccuracy;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,7 +38,7 @@ public class countdown : MonoBehaviour
         currentTime = starttime * 60;
         starttimeFLOAT = (float)starttime;
         winandloss = GetComponent<winandloss>();
-      
+      velocityaccuracy = GetComponent<button_script>();
 
 
     }
@@ -63,20 +64,26 @@ public class countdown : MonoBehaviour
             timer_is_running = false;
             round1.enabled = false;
             winandloss.win1();
+    
+           
             
         }
     }
     public void r2()
     {
         {
-          
+            velocityaccuracy.velocity = 0;
+            velocityaccuracy.accuaracy = 0;
             round2.enabled = true;
-            main.enabled = false;
-            main2.enabled = true;
+            // main.enabled = false;
+            //  main2.enabled = true;
+            currentTime = starttime * 60;
+            timer_is_running=true;
             if (currentTime <= 0)
             {
                
                 round2.enabled = false;
+
             }
         }
 
