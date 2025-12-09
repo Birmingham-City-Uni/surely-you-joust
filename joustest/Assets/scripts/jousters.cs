@@ -1,5 +1,6 @@
 using JetBrains.Annotations;
 using System.Collections;
+using System.Diagnostics.Contracts;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -16,6 +17,25 @@ public class jousters : MonoBehaviour
     public Vector3 startPos;
     public Vector3 currentPos;
     Coroutine current;
+    Coroutine current2;
+    Coroutine current3;
+    Coroutine current4;
+    Coroutine current5;
+   
+    public bool charge1 = false;
+    public bool charge2 = false;
+    public bool charge3 = false;
+    public bool charge4 = false;
+    public bool charge5 = false;
+
+    public bool r1 = false;
+    public bool r2 = false;
+    public bool r3 = false;
+    public bool r4 = false;
+    public bool r5 = false;
+    public bool r6 = false;
+
+   
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,17 +47,57 @@ public class jousters : MonoBehaviour
     }
 
 
-    private void Update()
+    void Update()
     {
         currentPos = transform.position;
-
-        if (time.currentTime <= 0)
+        if (time.round1start == true) 
         {
-            Debug.Log("End");
+            r1 = true;
+      
+        }
 
-            StopCoroutine(current);
 
+        if (r1 == true)
+            if (r2 == true)
+                if (r3 == true)
+                    if (r4 == true)
+                        if (r5 == true)
+        {
+         
+            StopCoroutine(current5);
+            charge5 = true;
+           
+        }
+        if (r1 == true)
+        if (r2 == true)
+                if (r3 == true)
+                    if (r4 == true)
+        {
+            StopCoroutine(current4);
+            charge4 = true;
             TeleportBack(startPos);
+        }
+        if (r1 == true)
+            if (r2 == true)
+                if (r3 == true)
+        {
+            StopCoroutine (current3);
+            charge3 = true;
+            TeleportBack(startPos);
+        }
+        if (r1 == true)
+            if (r2 == true)
+        {
+        StopCoroutine(current2);
+            charge2 = true;
+            TeleportBack(startPos);
+        }
+        if (r1== true)
+        {
+            StopCoroutine(current);
+            charge1 = true;
+            TeleportBack (startPos);
+
         }
     }
 
@@ -60,6 +120,37 @@ public class jousters : MonoBehaviour
     {
         transform.position = _startPos;
 
-        Debug.Log("MoveBack");
+       if (charge1==true)
+        {
+           if (r1 == true) 
+            {
+                r2= true;
+                Debug.Log("finalllyyyy");
+            }
+            current2 = StartCoroutine(moveplayer(target));
+            charge1 = false;
+            
+
+        }
+        if (charge2 == true)
+        {
+        current3 = StartCoroutine(moveplayer(target));
+            charge2=false;
+        }
+       if (charge3 == true)
+        {
+        current4 = StartCoroutine(moveplayer(target));
+            charge3 = false;
+        }
+        if (charge4 == true)
+        {
+        current5 = StartCoroutine(moveplayer(target));
+            charge4 = false;
+        }
+        if (charge5 == true)
+        {
+             StartCoroutine(moveplayer(target));
+            charge5 = false;
+        }
     }
 }
