@@ -7,6 +7,10 @@ public class scene_manager : MonoBehaviour
         {
         SceneManager.LoadScene("combat");
     }
-
+    public void menu()
+        
+    {
+        SceneManager.LoadScene("ingame menu");
+    }
 }
 
