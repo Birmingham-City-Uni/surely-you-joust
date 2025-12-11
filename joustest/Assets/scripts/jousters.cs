@@ -21,7 +21,7 @@ public class jousters : MonoBehaviour
     Coroutine current3;
     Coroutine current4;
     Coroutine current5;
-   
+
     public bool charge1 = false;
     public bool charge2 = false;
     public bool charge3 = false;
@@ -34,14 +34,23 @@ public class jousters : MonoBehaviour
     public bool r4 = false;
     public bool r5 = false;
     public bool r6 = false;
+    bool timerrun = true;
+    public float currentime;
+    public int strttime;
 
-   
+
+
+
+
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         current = StartCoroutine(moveplayer(target));
         time = GameObject.Find("score_manager").GetComponent<countdown>();
+        currentime = strttime * 60;
+
 
         startPos = transform.position;
     }
@@ -50,55 +59,63 @@ public class jousters : MonoBehaviour
     void Update()
     {
         currentPos = transform.position;
-        if (time.round1start == true) 
+        Debug.Log(time.currentTime);
+        if (timerrun == true)
         {
+            currentime = currentime - Time.deltaTime;
+
+        }
+        if (currentime <= 0)
+        {
+
+            Debug.Log("Time Out");
+            timerrun = false;
             r1 = true;
-      
-        }
 
 
-        if (r1 == true)
-            if (r2 == true)
-                if (r3 == true)
-                    if (r4 == true)
-                        if (r5 == true)
-        {
-         
-            StopCoroutine(current5);
-            charge5 = true;
-           
-        }
-        if (r1 == true)
-        if (r2 == true)
-                if (r3 == true)
-                    if (r4 == true)
-        {
-            StopCoroutine(current4);
-            charge4 = true;
-            TeleportBack(startPos);
-        }
-        if (r1 == true)
-            if (r2 == true)
-                if (r3 == true)
-        {
-            StopCoroutine (current3);
-            charge3 = true;
-            TeleportBack(startPos);
-        }
-        if (r1 == true)
-            if (r2 == true)
-        {
-        StopCoroutine(current2);
-            charge2 = true;
-            TeleportBack(startPos);
-        }
-        if (r1== true)
-        {
-            StopCoroutine(current);
-            charge1 = true;
-            TeleportBack (startPos);
 
+
+
+
+
+            
+                            if (r5 == true)
+                            {
+
+                                StopCoroutine(current5);
+                                charge5 = true;
+
+                            }
+          
+                        if (r4 == true)
+                        {
+                            StopCoroutine(current4);
+                            charge4 = true;
+                            TeleportBack(startPos);
+                        }
+          
+                    if (r3 == true)
+                    {
+                        StopCoroutine(current3);
+                        charge3 = true;
+                        TeleportBack(startPos);
+                    }
+          
+                if (r2 == true)
+                {
+                    StopCoroutine(current2);
+                    charge2 = true;
+                    TeleportBack(startPos);
+                }
+            if (r1 == true)
+            {
+                StopCoroutine(current);
+                charge1 = true;
+                TeleportBack(startPos);
+
+            }
         }
+        
     }
 
     IEnumerator moveplayer(Vector3 targetposition)
@@ -118,39 +135,63 @@ public class jousters : MonoBehaviour
 
     void TeleportBack(Vector3 _startPos)
     {
+        Debug.Log("TELEPORT");
         transform.position = _startPos;
 
-       if (charge1==true)
+        if (charge1 == true)
         {
-           if (r1 == true) 
-            {
-                r2= true;
-                Debug.Log("finalllyyyy");
-            }
+
+            r1 = false;
+           
+
+                currentime = strttime * 60;
+                timerrun = true;
+             r2 = true;
             current2 = StartCoroutine(moveplayer(target));
             charge1 = false;
-            
+
 
         }
         if (charge2 == true)
         {
-        current3 = StartCoroutine(moveplayer(target));
-            charge2=false;
-        }
-       if (charge3 == true)
-        {
-        current4 = StartCoroutine(moveplayer(target));
-            charge3 = false;
-        }
-        if (charge4 == true)
-        {
-        current5 = StartCoroutine(moveplayer(target));
-            charge4 = false;
-        }
-        if (charge5 == true)
-        {
-             StartCoroutine(moveplayer(target));
-            charge5 = false;
+            
+            r2 = false;
+                currentime = strttime * 60;
+                timerrun = true;
+            r3 = true;
+            {
+                current3 = StartCoroutine(moveplayer(target));
+                charge2 = false;
+            }
+            if (charge3 == true)
+            {
+              r3 = false;
+                    currentime = strttime * 60;
+                    timerrun = true;
+                r4 = true;
+                current4 = StartCoroutine(moveplayer(target));
+                charge3 = false;
+            }
+            if (charge4 == true)
+            {
+               r4= false;
+                    currentime = strttime * 60;
+                    timerrun = true;
+               r5 = true;
+                {
+                    current5 = StartCoroutine(moveplayer(target));
+                    charge4 = false;
+                }
+                if (charge5 == true)
+                {
+                   r5= false;
+                        currentime = strttime * 60;
+                        timerrun = true;
+                    
+                    StartCoroutine(moveplayer(target));
+                    charge5 = false;
+                }
+            }
         }
     }
 }

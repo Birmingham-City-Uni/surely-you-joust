@@ -20,13 +20,13 @@ public class shakenflash : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    { if (time.currentTime <= 0 && !hasshaken)
+    { if (time.currentTime <= 0 && hasshaken==false)
         {
           
             
-                start = false;
+                start = true;
             StartCoroutine(shaking());
-          flashs.strtflsh(1,0.8f, Color.white);
+         // flashs.strtflsh(1,0.8f, Color.white);
             hasshaken=true;
              
             

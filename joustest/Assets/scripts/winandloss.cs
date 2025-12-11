@@ -74,7 +74,8 @@ public class winandloss : MonoBehaviour
                 {
                     roundended1 = false;
                     haslifebeentaken = false;
-                    time.r2();
+                    time.rr2();
+                    Debug.Log("WIN");
 
 
                 }
@@ -118,7 +119,9 @@ public class winandloss : MonoBehaviour
         {
             roundended1 = false;
             haslifebeentaken = false;
-            time.r2();
+            Debug.Log("LOSS");
+
+            time.rr2();
 
 
         }

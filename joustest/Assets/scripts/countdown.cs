@@ -38,6 +38,8 @@ public class countdown : MonoBehaviour
     public bool round4start = false;
     public bool round5start = false;
     public bool round6start = false;
+    public jousters jousters;
+    public jousters jousters2;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -46,13 +48,15 @@ public class countdown : MonoBehaviour
         starttimeFLOAT = (float)starttime;
         winandloss = GetComponent<winandloss>();
         velocityaccuracy = GetComponent<button_script>();
+        jousters = GameObject.Find("combat(alpha)").GetComponent<jousters>();
+        jousters = GameObject.Find("crab_rideable (1)").GetComponent<jousters>();
         round1.enabled = true;
         round2.enabled = false;
         round3.enabled = false;
         round4.enabled = false;
         round5.enabled = false;
         round6.enabled = false;
-        round1start = true;
+     
 
     }
 
@@ -76,6 +80,7 @@ public class countdown : MonoBehaviour
         if (currentTime <= 0)
         {
             timer_is_running = false;
+            round1start = true;
 
 
         }
@@ -92,6 +97,9 @@ public class countdown : MonoBehaviour
                 round1.enabled=false;
                 round2.enabled=true;
 
+                
+            
+
             }
         }
         if (round2start == true) 
@@ -104,6 +112,7 @@ public class countdown : MonoBehaviour
                 round2.enabled = false;
                 round3.enabled = true;
                 winandloss.win1();
+         
             }
         }
         if (round3start == true)
@@ -115,6 +124,7 @@ public class countdown : MonoBehaviour
                 round4start = true;
                 round3.enabled = false;
                 round4.enabled = true;
+          
             }
         }
         if (round4start == true)
@@ -126,6 +136,7 @@ public class countdown : MonoBehaviour
                 round5start = true;
                 round4.enabled = false;
                 round5.enabled = true;
+          
             }
         }
         if (round5start == true)
@@ -137,6 +148,7 @@ public class countdown : MonoBehaviour
                 round6start = true;
                 round5.enabled = false;
                 round6.enabled = true;
+     
             }
         }
         if (round6start == true)
@@ -149,7 +161,7 @@ public class countdown : MonoBehaviour
         }
      
     }
-    public void r2()
+    public void rr2()
     {
 
         elapsedtime = 0;

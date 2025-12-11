@@ -287,7 +287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &246914918
 RectTransform:
   m_ObjectHideFlags: 0
@@ -705,6 +705,8 @@ MonoBehaviour:
   r4: 0
   r5: 0
   r6: 0
+  currentime: 0
+  strttime: 1
 --- !u!1 &329449185
 GameObject:
   m_ObjectHideFlags: 0
@@ -3037,6 +3039,8 @@ MonoBehaviour:
   r4: 0
   r5: 0
   r6: 0
+  currentime: 0
+  strttime: 1
 --- !u!1 &1439529001
 GameObject:
   m_ObjectHideFlags: 0
@@ -4558,6 +4562,8 @@ MonoBehaviour:
   round4start: 0
   round5start: 0
   round6start: 0
+  jousters: {fileID: 0}
+  jousters2: {fileID: 0}
 --- !u!1 &1933606350
 GameObject:
   m_ObjectHideFlags: 0
