@@ -21,6 +21,7 @@ public class coindestroy : MonoBehaviour
     {
         Destroy(coin);
         coinsScript.score = coinsScript.score + 1;
+        coinsScript.coincount = coinsScript.coincount - 1;
 
     }
 }
