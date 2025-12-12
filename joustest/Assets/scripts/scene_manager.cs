@@ -20,5 +20,9 @@ public class scene_manager : MonoBehaviour
         Application.Quit();
 #endif
     }
+    public void title()
+    {
+               SceneManager.LoadScene("titlecard");
+    }
 }
 

@@ -40,6 +40,9 @@ public class countdown : MonoBehaviour
     public bool round6start = false;
     public jousters jousters;
     public jousters jousters2;
+    public AudioSource impact;
+    public AudioSource armour;
+    public AudioSource crab;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -56,7 +59,9 @@ public class countdown : MonoBehaviour
         round4.enabled = false;
         round5.enabled = false;
         round6.enabled = false;
-     
+        impact.enabled = false;
+
+
 
     }
 
@@ -81,7 +86,22 @@ public class countdown : MonoBehaviour
         {
             timer_is_running = false;
             round1start = true;
-
+            impact.enabled = true;
+            if (impact.enabled == true)
+            {
+                armour.enabled = false;
+                crab.enabled = false;
+            }
+            else
+            {
+                                armour.enabled = true;
+                crab.enabled = true;
+            }
+            if (currentTime <= 58)
+            {
+                impact.enabled = false;
+     
+            }
 
         }
         if (round1start == true)
