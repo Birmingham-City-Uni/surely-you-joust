@@ -10,12 +10,12 @@ public class winandloss : MonoBehaviour
     public int number;
     public int playerlifes = 3;
     public int enemylife = 3;
-    public Image life;
-    public Image life2;
-    public Image life3;
-    public Image enemy_life;
-    public Image enemylife2;
-    public Image enemylife3;
+    public RawImage life;
+    public RawImage life2;
+    public RawImage life3;
+    public RawImage enemy_life;
+    public RawImage enemylife2;
+    public RawImage enemylife3;
     public Canvas winner;
     public Canvas loser;
     public bool haslifebeentaken = false;

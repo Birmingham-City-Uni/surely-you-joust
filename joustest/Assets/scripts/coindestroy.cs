@@ -1,11 +1,13 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 public class coindestroy : MonoBehaviour
 {
     public GameObject coin;
     public TMPro.TextMeshProUGUI coinscore;
     private coins coinsScript;
+    public int score;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,13 +17,16 @@ public class coindestroy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+      
     }
     void OnTriggerEnter(Collider other)
     {
-        Destroy(coin);
-        coinsScript.score = coinsScript.score + 1;
-        coinsScript.coincount = coinsScript.coincount - 1;
+     coinsScript.destroyandadd(1);
+    Destroy(coin);
+          
+
+        
 
     }
+
 }
