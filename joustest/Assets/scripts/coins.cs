@@ -7,7 +7,7 @@ public class coins : MonoBehaviour
     public GameObject coin;
     public TMPro.TextMeshProUGUI coinscore;
  
-
+    public static coins Instance;
     public float itemspreadx = 10f;
     public float itemspready = 0f;
     public float itemspreadz = 10f;
@@ -17,9 +17,22 @@ public class coins : MonoBehaviour
     public int score;
     public int maxcoins = 50;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance= this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else         {
+            Destroy(gameObject);
+            return;
+        }
+
+    }
     void Start()
     {
-        
+       updadatescoreui();
     }
 
     // Update is called once per frame
@@ -56,6 +69,13 @@ public class coins : MonoBehaviour
             coincount = coincount - 1;
 
 
+        }
+    }
+    void updadatescoreui()
+    {
+        if (coinscore != null)
+        {
+            coinscore.text = score.ToString();
         }
     }
      
